@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using Company.Carstore.Api.Models;
-using Company.Carstore.Api.Data;
 
 namespace Company.Carstore.Api
 {
@@ -28,7 +27,7 @@ namespace Company.Carstore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CarstoreContext>(options => options.UseNpgsql(Configuration.GetConnectionString("CarstoreContext")));
+            services.AddDbContext<CarstoreContext>(options => options.UseInMemoryDatabase("Cars"));
 
             services.AddCors(options =>
             {

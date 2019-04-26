@@ -3,7 +3,8 @@ export class Car {
     make: string;
     model: string;
     year: number;
-    numofmiles: number;
-    numofseats: number;
+    miles: number;
+    seats: number;
     category: string;
+    price: number;
 }
